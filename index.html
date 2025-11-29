@@ -3,14 +3,14 @@
 <head>  
     <meta charset="UTF-8" />  
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
-    <title>Virtual Gift for My Love</title>  
+    <title>Virtual Gift for My Love - Sunset Theme</title>  
   
     <style>  
-        /* --- TEMA LILAC UNGU (Romantic/Soft) --- */
+        /* --- TEMA RETRO SUNSET ORANGE & PINK --- */
         body {  
             font-family: 'Arial', sans-serif;  
-            background-color: #f8f0ff; /* Lavender Blush (Latar Belakang Sangat Terang) */
-            color: #4a4a4a; /* Warna Teks Gelap Agar Kontras */
+            background-color: #ffebcd; /* Krem Cerah */
+            color: #333333; /* Teks Gelap Kontras */
             display: flex;  
             justify-content: center;  
             align-items: center;  
@@ -22,45 +22,47 @@
         .container {  
             width: 90%;  
             max-width: 450px;  
-            background: #ffffff; /* Putih Bersih */
-            border-radius: 20px;  
-            box-shadow: 0 0 25px rgba(177, 156, 217, 0.4); /* Lilac Shadow */
+            background: #ffffff; /* Putih Cerah */
+            border-radius: 15px;  
+            /* Mengubah Shadow menjadi tegas, warna Oranye */
+            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.2); 
             padding: 30px;  
             text-align: center;  
-            border: 1px solid rgba(177, 156, 217, 0.6);  
+            border: 3px solid #ff6347; /* Border Tebal Pink-Orange */
         }  
 
-        /* ✨ Glow Pulse Slow (Animasi 2) - Disesuaikan dengan Lilac */  
+        /* ✨ Glow Pulse Slow (Animasi 2) - Disesuaikan dengan Oranye */  
         .glow-soft {  
             animation: softGlow 4s ease-in-out infinite;  
         }  
         @keyframes softGlow {  
-            0% { box-shadow: 0 0 10px rgba(177, 156, 217, 0.3); }  
-            50% { box-shadow: 0 0 22px rgba(177, 156, 217, 0.75); }  
-            100% { box-shadow: 0 0 10px rgba(177, 156, 217, 0.3); }  
+            0% { box-shadow: 0 0 10px rgba(255, 69, 0, 0.2); }  
+            50% { box-shadow: 0 0 20px rgba(255, 99, 71, 0.6); } /* Tomato Glow */
+            100% { box-shadow: 0 0 10px rgba(255, 69, 0, 0.2); }  
         }  
   
         .header-pink {  
-            color: #9370db; /* Medium Purple */
-            font-size: 2em;  
+            color: #ff4500; /* Orange Red */
+            font-size: 2.2em; /* Lebih besar */
             margin-bottom: 10px;  
-            font-weight: bold;  
-            text-shadow: 0 0 10px rgba(177, 156, 217, 0.6); /* Lilac Shadow */
+            font-weight: 800; /* Lebih Bold */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Shadow lebih keras */
         }  
   
         .subheader {  
-            color: #b19cd9; /* Lilac */
+            color: #ff6347; /* Tomato */
             font-size: 1.1em;  
-            margin-bottom: 20px;  
+            margin-bottom: 25px;  
+            font-weight: bold;
         }  
   
         .video-box {  
-            background-color: #f0f0f0; /* Light Gray */
-            border: 1px solid rgba(177, 156, 217, 0.5);  
+            background-color: #fff0f5; /* Lavender Blush Muda */
+            border: 3px solid #ff6347; /* Border Tomato */
             border-radius: 10px;  
-            margin-bottom: 20px;  
+            margin-bottom: 25px;  
             overflow: hidden;  
-            height: 250px;  
+            height: 280px; /* Diperbesar sedikit */
         }  
   
         .nav-buttons {  
@@ -70,46 +72,48 @@
         }  
   
         .nav-button {  
-            background: linear-gradient(135deg, #b19cd9, #9370db); /* Gradien Lilac ke Ungu */
-            color: #ffffff; /* Teks Putih */
+            /* Gradien Orange Red ke Pink Cerah */
+            background: linear-gradient(135deg, #ff6347, #ffb6c1); 
+            color: #333333; /* Teks Gelap */
             border: none;  
-            padding: 10px 15px;  
-            border-radius: 25px;  
+            padding: 12px 18px;  /* Padding diperbesar */
+            border-radius: 30px;  /* Lebih bulat */
             cursor: pointer;  
-            font-weight: bold;  
+            font-weight: 700;  
             transition: 0.3s;  
-            box-shadow: 0 0 10px rgba(147, 112, 219, 0.4);  
+            box-shadow: 0 5px 10px rgba(255, 99, 71, 0.4);  
             position: relative;  
             overflow: hidden;  
         }  
   
         .nav-button:hover {  
             transform: scale(1.05);  
-            box-shadow: 0 0 16px rgba(147, 112, 219, 0.7);  
+            box-shadow: 0 0 18px rgba(255, 99, 71, 0.8);  
         }  
   
         .content-section {  
             padding: 20px;  
-            background-color: #f0f0f0; /* Light Gray */
-            border-radius: 15px;  
-            border: 1px solid rgba(177, 156, 217, 0.5);  
+            background-color: #f7f7f7; /* Abu-abu Sangat Muda */
+            border-radius: 10px;  
+            border: 2px solid #ff4500; /* Border Orange Red */
             margin-top: 20px;  
             text-align: left;  
-            color: #4a4a4a; /* Teks Gelap */
+            color: #333333;  
             display: none;  
         }  
   
         .content-section h3 {  
-            color: #9370db; /* Medium Purple */
+            color: #ff4500; /* Orange Red */
             margin-top: 0;  
-            border-bottom: 2px solid #b19cd9; /* Lilac Border */
+            border-bottom: 2px solid #ff6347; /* Tomato Border */
             padding-bottom: 5px;  
+            font-weight: 800;
         }  
   
         .postcard-image {  
             width: 100%;  
             height: 30px;  
-            background: linear-gradient(90deg, #b19cd9, #9370db); /* Gradien Lilac */
+            background: linear-gradient(90deg, #ff6347, #ffb6c1); /* Gradien Sunset */
             border-radius: 10px;  
             display: flex;  
             justify-content: center;  
@@ -118,19 +122,19 @@
         }  
         .postcard-image span {  
             color: #ffffff; /* Teks Putih */
-            font-weight: bold;  
+            font-weight: 800;  
         }  
   
-        /* Floating Effects - Disesuaikan dengan Lilac */  
+        /* Floating Effects - Disesuaikan dengan Sunset Pink */  
         .floating-effect { pointer-events:none; position:fixed; z-index:9; }  
         .heart {  
             position: fixed;  
             bottom: -30px;  
-            color: #9370db; /* Medium Purple */
+            color: #ff6347; /* Tomato */
             font-size: 18px;  
             opacity: 0.9;  
             animation: rise 5s linear forwards;  
-            text-shadow: 0 0 8px rgba(177, 156, 217, 0.7);  
+            text-shadow: 0 0 8px rgba(255, 99, 71, 0.7);  
         }  
         @keyframes rise {  
             0% { transform: translateY(0) scale(0.9); opacity: 0.9; }  
@@ -140,11 +144,11 @@
         .sparkle {  
             width: 6px;  
             height: 6px;  
-            background: radial-gradient(circle, #fff, #b19cd9); /* Lilac Sparkle */
+            background: radial-gradient(circle, #fff, #ffb6c1); /* Pink Sparkle */
             border-radius: 50%;  
             opacity: 0;  
             animation: sparkle 1.5s ease-in-out forwards;  
-            filter: drop-shadow(0 0 6px rgba(177, 156, 217, 0.8));  
+            filter: drop-shadow(0 0 6px rgba(255, 99, 71, 0.8));  
         }  
         @keyframes sparkle {  
             0% { transform: scale(0.6); opacity: 0; }  
@@ -152,16 +156,16 @@
             100% { transform: scale(0.4); opacity: 0; }  
         }  
 
-        /* ✨ Falling Light Particles (Animasi 4) - Disesuaikan dengan Lilac */  
+        /* ✨ Falling Light Particles (Animasi 4) - Disesuaikan dengan Oranye */  
         .light-particle {  
             position: fixed;  
             top: -20px;  
             width: 8px;  
             height: 8px;  
-            background: radial-gradient(circle, #fff, #b19cd9); /* Lilac Particle */
+            background: radial-gradient(circle, #fff, #ff4500); /* Orange Red Particle */
             border-radius: 50%;  
             opacity: 0.7;  
-            filter: drop-shadow(0 0 6px #b19cd9);  
+            filter: drop-shadow(0 0 6px #ff4500);  
             animation: fallLight 4.5s linear forwards;  
         }  
         @keyframes fallLight {  
@@ -169,7 +173,9 @@
             100% { transform: translateY(105vh) scale(1.4); opacity: 0; }  
         }  
 
-        /* ✨ Shine Sweep (Animasi 10) - Disesuaikan dengan Lilac */  
+        /* Penghapusan animasi Typing dan Blink di CSS */  
+
+        /* ✨ Shine Sweep (Animasi 10) - Disesuaikan dengan Sunset */  
         .shine::after {  
             content: "";  
             position: absolute;  
@@ -289,5 +295,4 @@ setInterval(() => {
 </script>  
   
 </body>  
-    </html>
-    
+</html>
