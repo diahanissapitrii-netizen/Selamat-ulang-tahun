@@ -3,10 +3,10 @@
 <head>  
     <meta charset="UTF-8" />  
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
-    <title>Virtual Gift for My Love - Sunset Theme</title>  
+    <title>Virtual Gift for My Love - Retro Sunset Theme</title>  
   
     <style>  
-        /* --- TEMA RETRO SUNSET ORANGE & PINK --- */
+        /* --- TEMA RETRO SUNSET ORANGE & PINK (Enerjik) --- */
         body {  
             font-family: 'Arial', sans-serif;  
             background-color: #ffebcd; /* Krem Cerah */
@@ -24,46 +24,137 @@
             max-width: 450px;  
             background: #ffffff; /* Putih Cerah */
             border-radius: 15px;  
-            /* Mengubah Shadow menjadi tegas, warna Oranye */
             box-shadow: 0 5px 15px rgba(255, 69, 0, 0.2); 
             padding: 30px;  
             text-align: center;  
             border: 3px solid #ff6347; /* Border Tebal Pink-Orange */
         }  
 
-        /* ✨ Glow Pulse Slow (Animasi 2) - Disesuaikan dengan Oranye */  
+        /* --- POPUP MODAL STYLES --- */
+        .modal {
+            display: flex; 
+            position: fixed;
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); 
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease; /* Transisi untuk menghilang mulus */
+        }
+        
+        /* Gaya baru untuk Input PIN */
+        #pin-input {
+            width: 100%;
+            padding: 10px;
+            margin: 15px 0;
+            border: 2px solid #ff6347; /* Tomato Border */
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ff4500; /* Orange Red Text */
+            background-color: #fff0f5;
+        }
+
+        .modal-content {
+            background-color: #fff0f5; 
+            padding: 30px;
+            border: 3px solid #ff4500; 
+            border-radius: 15px;
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(255, 99, 71, 0.6); 
+            color: #333333; 
+            animation: zoomIn 0.5s ease-out; 
+        }
+        
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-content h2 {
+            color: #ff4500; 
+            margin-top: 0;
+            font-size: 1.5em;
+            font-weight: 800;
+        }
+
+        .modal-content p {
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .modal-button {
+            background: linear-gradient(135deg, #ff6347, #ffb6c1); 
+            color: #333333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px; 
+            cursor: pointer;
+            font-weight: 700;
+            transition: 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-button:hover {
+            transform: scale(1.05);
+        }
+        /* --- AKHIR POPUP MODAL STYLES --- */
+
+
+        /* ✨ Glow Pulse (Disesuaikan dengan Oranye) */  
         .glow-soft {  
             animation: softGlow 4s ease-in-out infinite;  
         }  
         @keyframes softGlow {  
             0% { box-shadow: 0 0 10px rgba(255, 69, 0, 0.2); }  
-            50% { box-shadow: 0 0 20px rgba(255, 99, 71, 0.6); } /* Tomato Glow */
+            50% { box-shadow: 0 0 20px rgba(255, 99, 71, 0.6); } 
             100% { box-shadow: 0 0 10px rgba(255, 69, 0, 0.2); }  
         }  
   
         .header-pink {  
-            color: #ff4500; /* Orange Red */
-            font-size: 2.2em; /* Lebih besar */
+            color: #ff4500; 
+            font-size: 2.2em; 
             margin-bottom: 10px;  
-            font-weight: 800; /* Lebih Bold */
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Shadow lebih keras */
+            font-weight: 800; 
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); 
         }  
   
         .subheader {  
-            color: #ff6347; /* Tomato */
+            color: #ff6347; 
             font-size: 1.1em;  
             margin-bottom: 25px;  
             font-weight: bold;
         }  
   
         .video-box {  
-            background-color: #fff0f5; /* Lavender Blush Muda */
-            border: 3px solid #ff6347; /* Border Tomato */
+            background-color: #fff0f5; 
+            border: 3px solid #ff6347; 
             border-radius: 10px;  
             margin-bottom: 25px;  
             overflow: hidden;  
-            height: 280px; /* Diperbesar sedikit */
+            height: 280px; 
+            position: relative; 
         }  
+
+        /* --- PERBAIKAN IFRAME BARU --- */
+        .video-box iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: absolute; 
+            top: 0;
+            left: 0;
+        }
+        /* --- AKHIR PERBAIKAN IFRAME BARU --- */
   
         .nav-buttons {  
             display: flex;  
@@ -72,12 +163,11 @@
         }  
   
         .nav-button {  
-            /* Gradien Orange Red ke Pink Cerah */
             background: linear-gradient(135deg, #ff6347, #ffb6c1); 
-            color: #333333; /* Teks Gelap */
+            color: #333333; 
             border: none;  
-            padding: 12px 18px;  /* Padding diperbesar */
-            border-radius: 30px;  /* Lebih bulat */
+            padding: 12px 18px;  
+            border-radius: 30px;  
             cursor: pointer;  
             font-weight: 700;  
             transition: 0.3s;  
@@ -93,9 +183,9 @@
   
         .content-section {  
             padding: 20px;  
-            background-color: #f7f7f7; /* Abu-abu Sangat Muda */
+            background-color: #f7f7f7; 
             border-radius: 10px;  
-            border: 2px solid #ff4500; /* Border Orange Red */
+            border: 2px solid #ff4500; 
             margin-top: 20px;  
             text-align: left;  
             color: #333333;  
@@ -103,9 +193,9 @@
         }  
   
         .content-section h3 {  
-            color: #ff4500; /* Orange Red */
+            color: #ff4500; 
             margin-top: 0;  
-            border-bottom: 2px solid #ff6347; /* Tomato Border */
+            border-bottom: 2px solid #ff6347; 
             padding-bottom: 5px;  
             font-weight: 800;
         }  
@@ -113,7 +203,7 @@
         .postcard-image {  
             width: 100%;  
             height: 30px;  
-            background: linear-gradient(90deg, #ff6347, #ffb6c1); /* Gradien Sunset */
+            background: linear-gradient(90deg, #ff6347, #ffb6c1); 
             border-radius: 10px;  
             display: flex;  
             justify-content: center;  
@@ -121,16 +211,39 @@
             margin-bottom: 20px;  
         }  
         .postcard-image span {  
-            color: #ffffff; /* Teks Putih */
+            color: #ffffff; 
             font-weight: 800;  
         }  
+
+        /* --- STYLE BARU UNTUK GALERI FOTO --- */
+        .image-gallery {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+            gap: 15px; 
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: auto; 
+            border-radius: 8px; 
+            border: 2px solid #ffb6c1; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05); 
+        }
+        /* --- AKHIR STYLE BARU UNTUK GALERI FOTO --- */
   
         /* Floating Effects - Disesuaikan dengan Sunset Pink */  
         .floating-effect { pointer-events:none; position:fixed; z-index:9; }  
         .heart {  
             position: fixed;  
             bottom: -30px;  
-            color: #ff6347; /* Tomato */
+            color: #ff6347; 
             font-size: 18px;  
             opacity: 0.9;  
             animation: rise 5s linear forwards;  
@@ -144,7 +257,7 @@
         .sparkle {  
             width: 6px;  
             height: 6px;  
-            background: radial-gradient(circle, #fff, #ffb6c1); /* Pink Sparkle */
+            background: radial-gradient(circle, #fff, #ffb6c1); 
             border-radius: 50%;  
             opacity: 0;  
             animation: sparkle 1.5s ease-in-out forwards;  
@@ -162,7 +275,7 @@
             top: -20px;  
             width: 8px;  
             height: 8px;  
-            background: radial-gradient(circle, #fff, #ff4500); /* Orange Red Particle */
+            background: radial-gradient(circle, #fff, #ff4500); 
             border-radius: 50%;  
             opacity: 0.7;  
             filter: drop-shadow(0 0 6px #ff4500);  
@@ -173,9 +286,7 @@
             100% { transform: translateY(105vh) scale(1.4); opacity: 0; }  
         }  
 
-        /* Penghapusan animasi Typing dan Blink di CSS */  
-
-        /* ✨ Shine Sweep (Animasi 10) - Disesuaikan dengan Sunset */  
+        /* ✨ Shine Sweep (Animasi 10) */  
         .shine::after {  
             content: "";  
             position: absolute;  
@@ -196,6 +307,18 @@
 </head>  
   
 <body>  
+<div id="welcome-modal" class="modal">
+    <div class="modal-content">
+        <h2>UNLOCK LEVEL BARU!</h2>
+        <p>Selamat datang, Mr. Ary Christoforus! Untuk melanjutkan ke perayaan, kamu harus menyelesaikan tantangan ini. Buktikan kamu ingat kode sandi yang kamu bawa sejak lahir dengan memasukkan 4 digit kunci rahasia.</p>
+        
+        <input type="number" id="pin-input" placeholder="0 0 0 0" maxlength="4" onkeypress="if(event.key === 'Enter') checkPin()">
+        <small id="error-message" style="color: #ff4500; font-weight: bold; display: none; margin-bottom: 10px;">PIN Salah! Coba lagi.</small>
+
+        <button class="modal-button" onclick="checkPin()">LANJUTKAN KE LEVEL BERIKUTNYA</button>
+    </div>
+</div>
+
 <div class="container glow-soft" id="main-content">  
     <div class="header-pink">HAPPY BIRTHDAY!</div>  
     <div class="subheader">Hi, Abang Sayang!</div>  
@@ -230,13 +353,19 @@ Yang jelas, perasaanku buat kamu itu nyata, dan dalam.
   
     <div class="content-section" id="twenty-content">  
         <h3>Video of the Two of Us</h3>  
+        <p>❤️</p>
+        <div class="image-gallery">
+            </div>
         <div class="video-box" style="height:280px;">  
             <iframe src="https://drive.google.com/file/d/1-zrx-RCEMTlbFrBftFoqGk1hSeovTQyZ/preview" width="100%" height="100%"></iframe>  
         </div>  
+<div class="video-box">  
+        <iframe src="https://drive.google.com/file/d/126JtuL4Nt8HxaGqc0SqfsIZ03ggJtMDv/preview" width="640" height="480" allow="autoplay"></iframe>
+    </div>  
     </div>  
   
     <div class="content-section" id="readMe-content">  
-        <h3>Happy Birthday!</h3>  
+        <h3>A Letter for You</h3>  
         <div class="postcard-image"><span>For You, with Love</span></div>  
         <p style="white-space:pre-wrap; line-height:1.6;">Selamat ulang tahun, sayang.
 Semoga kamu selalu jadi dirimu yang sekarang—yang aku sayangi apa adanya.
@@ -258,6 +387,31 @@ Peluk erat dariku—kapan pun kamu butuh.</p>
 </div>  
   
 <script>  
+// PIN RAHASIA (GANTI DI SINI JIKA PERLU)
+const CORRECT_PIN = "0312"; 
+
+// Fungsi untuk memeriksa PIN
+function checkPin() {
+    const pinInput = document.getElementById('pin-input').value;
+    const errorMessage = document.getElementById('error-message');
+    
+    if (pinInput === CORRECT_PIN) {
+        // PIN BENAR
+        document.getElementById('welcome-modal').style.opacity = '0';
+        setTimeout(() => {
+            document.getElementById('welcome-modal').style.display = 'none';
+        }, 300); // Menunggu transisi opacity selesai
+        errorMessage.style.display = 'none';
+    } else {
+        // PIN SALAH
+        errorMessage.style.display = 'block';
+        document.getElementById('pin-input').value = ''; // Mengosongkan input
+        document.getElementById('pin-input').focus(); // Fokus kembali ke input
+    }
+}
+
+
+// Fungsi untuk menampilkan konten 
 function showContent(id) {  
     document.querySelectorAll('.content-section').forEach(sec => sec.style.display = 'none');  
     document.getElementById(id + '-content').style.display = 'block';  
